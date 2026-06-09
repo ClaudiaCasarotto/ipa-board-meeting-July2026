@@ -5,6 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agenda – IPA Board Meeting</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── TWO-COLUMN AGENDA ─────────────────────────────── */
+    .two-col-agenda {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: .75rem;
+      font-size: .85rem;
+    }
+    .two-col-agenda th {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: .7rem 1rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: normal;
+      text-align: left;
+      border: 1px solid var(--dark-green);
+    }
+    .two-col-agenda th.time-col-head {
+      background: var(--dark-green);
+      width: 80px;
+    }
+    .two-col-agenda td {
+      padding: .55rem .9rem;
+      border: 1px solid var(--dark-gray);
+      vertical-align: top;
+      line-height: 1.5;
+      color: var(--charcoal);
+    }
+    .two-col-agenda td.time {
+      white-space: nowrap;
+      font-weight: bold;
+      color: var(--dark-green);
+      font-size: .78rem;
+      background: var(--light-gray);
+      width: 80px;
+      border-right: 2px solid var(--dark-gray);
+    }
+    .two-col-agenda td.day-cell {
+      width: calc((100% - 80px) / 2);
+    }
+    .two-col-agenda td.empty {
+      background: var(--white);
+    }
+    .two-col-agenda td.shaded {
+      background: #e8e8e8;
+    }
+    .two-col-agenda td.highlight {
+      background: #f0f8f1;
+    }
+    .two-col-agenda strong {
+      color: var(--dark-green);
+    }
+    .two-col-agenda ul {
+      margin: .2rem 0 0 1rem;
+      padding: 0;
+    }
+    .two-col-agenda ul li {
+      margin-bottom: .15rem;
+    }
+    .confirmed {
+      display: inline-block;
+      background: #d5f0d8;
+      color: var(--dark-green);
+      font-size: .68rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: .1rem .4rem;
+      border-radius: 3px;
+      margin-left: .3rem;
+      vertical-align: middle;
+    }
+    .note {
+      font-size: .78rem;
+      color: #666;
+      font-style: italic;
+      margin-top: .25rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,163 +102,175 @@
 <div class="page-header">
   <div class="breadcrumb">← <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp; Agenda</div>
   <h1>Agenda &amp; Schedule</h1>
-  <p>Meeting timetable for Month DD, YYYY &nbsp;·&nbsp; HH:MM – HH:MM ET</p>
+  <p>July 30 – 31 &nbsp;·&nbsp; Nairobi, Kenya</p>
 </div>
 
 <div class="content">
+  <div class="section-label">Two-Day Schedule</div>
 
-  <div class="section-label">Morning Session</div>
-  <table class="agenda-table">
+  <table class="two-col-agenda">
     <thead>
       <tr>
-        <th>Time</th>
-        <th>Duration</th>
-        <th>Item</th>
-        <th>Lead</th>
+        <th class="time-col-head"></th>
+        <th>July 30</th>
+        <th>July 31</th>
       </tr>
     </thead>
     <tbody>
+
+      <tr>
+        <td class="time">8:15 AM</td>
+        <td class="day-cell" rowspan="2">
+          Briefing with the project teams in the Nairobi office<br>
+          <span class="note">Eric Ochieng, Gladys Wanjala</span>
+        </td>
+        <td class="day-cell empty"></td>
+      </tr>
+      <tr>
+        <td class="time">8:30 AM</td>
+        <td class="day-cell empty"></td>
+      </tr>
+
       <tr>
         <td class="time">9:00 AM</td>
-        <td class="duration">10 min</td>
-        <td>
-          <div class="topic">Welcome &amp; Call to Order <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Roll call, quorum, approval of previous minutes</div>
-        </td>
-        <td>Board Chair</td>
+        <td class="day-cell">Project field visit in small groups</td>
+        <td class="day-cell empty"></td>
       </tr>
-      <tr>
-        <td class="time">9:10 AM</td>
-        <td class="duration">20 min</td>
-        <td>
-          <div class="topic">CEO Update <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Organizational priorities, key developments</div>
-        </td>
-        <td>CEO</td>
-      </tr>
+
       <tr>
         <td class="time">9:30 AM</td>
-        <td class="duration">30 min</td>
-        <td>
-          <div class="topic">Financial Review <span class="tag tag-decision">DECISION</span></div>
-          <div class="presenter">Q3 financials, budget update, approval requested</div>
+        <td class="day-cell" rowspan="2">
+          <strong>KLPS</strong>
+          <ul>
+            <li>Discussion with enumerator</li>
+            <li>Discussion with respondent</li>
+          </ul>
         </td>
-        <td>CFO</td>
+        <td class="day-cell highlight" rowspan="3">
+          <strong>Government partner visit</strong> <span class="confirmed">confirmed</span><br>
+          Ministry of Education, Mr. Fred Mujumba, Director for the Kenya Education Management Information System (KEMIS)<br>
+          <span class="note">(agreed and will work to mobilize Directors; IPA to support with agenda/prep for meeting)</span>
+        </td>
       </tr>
       <tr>
         <td class="time">10:00 AM</td>
-        <td class="duration">15 min</td>
-        <td>
-          <div class="topic">Break</div>
-        </td>
-        <td></td>
       </tr>
-    </tbody>
-  </table>
+      <tr>
+        <td class="time">10:30 AM</td>
+        <td class="day-cell empty"></td>
+      </tr>
 
-  <div class="section-label">Midday Session</div>
-  <table class="agenda-table">
-    <thead>
       <tr>
-        <th>Time</th>
-        <th>Duration</th>
-        <th>Item</th>
-        <th>Lead</th>
+        <td class="time">10:50 AM</td>
+        <td class="day-cell empty"></td>
+        <td class="day-cell shaded">Tea break</td>
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="time">10:15 AM</td>
-        <td class="duration">45 min</td>
-        <td>
-          <div class="topic">Strategic Plan Discussion <span class="tag tag-decision">DECISION</span></div>
-          <div class="presenter">Review of strategic priorities, direction-setting</div>
-        </td>
-        <td>Strategy Team</td>
-      </tr>
+
       <tr>
         <td class="time">11:00 AM</td>
-        <td class="duration">30 min</td>
-        <td>
-          <div class="topic">Research Portfolio Review <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Key study updates, impact highlights</div>
+        <td class="day-cell empty" rowspan="2"></td>
+        <td class="day-cell highlight" rowspan="2">
+          <strong>Village Enterprise</strong> <span class="confirmed">confirmed</span>
+          <ul>
+            <li>Leah Okero: Regional Director of Programs &amp; Kenya Country Director</li>
+            <li>Billy Odhiambo: Senior Monitoring, Evidence &amp; Learning Manager</li>
+          </ul>
         </td>
-        <td>Research Director</td>
       </tr>
       <tr>
         <td class="time">11:30 AM</td>
-        <td class="duration">30 min</td>
-        <td>
-          <div class="topic">Governance &amp; Nominations <span class="tag tag-vote">VOTE</span></div>
-          <div class="presenter">New Board member nominations, committee updates</div>
-        </td>
-        <td>Board Chair</td>
       </tr>
+
       <tr>
         <td class="time">12:00 PM</td>
-        <td class="duration">60 min</td>
-        <td>
-          <div class="topic">Lunch &amp; Networking</div>
+        <td class="day-cell empty"></td>
+        <td class="day-cell highlight" rowspan="2">
+          <strong>IFPRI</strong> <span class="confirmed">confirmed</span><br>
+          Berber Kremer: Senior Research Fellow, Markets, Trade, and Institutions Unit
         </td>
-        <td></td>
       </tr>
-    </tbody>
-  </table>
-
-  <div class="section-label">Afternoon Session</div>
-  <table class="agenda-table">
-    <thead>
       <tr>
-        <th>Time</th>
-        <th>Duration</th>
-        <th>Item</th>
-        <th>Lead</th>
+        <td class="time">12:15 PM</td>
+        <td class="day-cell empty"></td>
       </tr>
-    </thead>
-    <tbody>
+
+      <tr>
+        <td class="time">12:30 PM</td>
+        <td class="day-cell shaded">Lunch with the Nairobi team @ office</td>
+        <td class="day-cell shaded">Lunch with Berber @ Radisson Blu</td>
+      </tr>
+
       <tr>
         <td class="time">1:00 PM</td>
-        <td class="duration">45 min</td>
-        <td>
-          <div class="topic">Fundraising &amp; Partnerships Update <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Donor pipeline, new partnerships, opportunities</div>
-        </td>
-        <td>Development Team</td>
+        <td class="day-cell empty"></td>
+        <td class="day-cell empty"></td>
       </tr>
       <tr>
-        <td class="time">1:45 PM</td>
-        <td class="duration">30 min</td>
-        <td>
-          <div class="topic">Open Discussion &amp; Board Input <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Any other business, Board questions</div>
-        </td>
-        <td>All</td>
+        <td class="time">1:30 PM</td>
+        <td class="day-cell empty"></td>
+        <td class="day-cell empty"></td>
       </tr>
+
       <tr>
-        <td class="time">2:15 PM</td>
-        <td class="duration">15 min</td>
-        <td>
-          <div class="topic">Wrap-up &amp; Next Steps <span class="tag tag-info">INFO</span></div>
-          <div class="presenter">Action items, next meeting date</div>
+        <td class="time">2:00 PM</td>
+        <td class="day-cell highlight" rowspan="4">
+          <strong>Management team (expanded) meeting</strong><br>
+          Better understand the history, structure, strategic positioning of the Country Office, focusing on how the strategic re-alignment is happening in practice (incl. OneIPA projects) and the positioning as regional hub from an operational and programmatic perspective.<br>
+          <span class="note">IPAK SMT + RFE, Noureini, Vicky, Grants, Comms</span>
         </td>
-        <td>Board Chair</td>
+        <td class="day-cell">Takeaways from the morning</td>
       </tr>
       <tr>
         <td class="time">2:30 PM</td>
-        <td class="duration">—</td>
-        <td><div class="topic">Adjourn</div></td>
-        <td></td>
+        <td class="day-cell">Board feedback on the draft strategy</td>
       </tr>
+      <tr>
+        <td class="time">3:00 PM</td>
+        <td class="day-cell empty"></td>
+      </tr>
+      <tr>
+        <td class="time">3:30 PM</td>
+        <td class="day-cell empty"></td>
+      </tr>
+
+      <tr>
+        <td class="time">4:00 PM</td>
+        <td class="day-cell" rowspan="2">
+          Transfer to Karen's<br>
+          <span class="note">(IPAK to organize + cabs for return TBD based on hotels)</span>
+        </td>
+        <td class="day-cell">Mid year financial results</td>
+      </tr>
+      <tr>
+        <td class="time">4:30 PM</td>
+        <td class="day-cell">Committee reports</td>
+      </tr>
+
+      <tr>
+        <td class="time">5:00 PM</td>
+        <td class="day-cell">Board only dinner at Karen's</td>
+        <td class="day-cell">Executive session</td>
+      </tr>
+      <tr>
+        <td class="time">5:30 PM</td>
+        <td class="day-cell empty"></td>
+        <td class="day-cell empty"></td>
+      </tr>
+
+      <tr>
+        <td class="time">6:00 PM</td>
+        <td class="day-cell empty"></td>
+        <td class="day-cell shaded">Drinks and dinner</td>
+      </tr>
+
     </tbody>
   </table>
 
-  <p style="margin-top:1.5rem; font-size:.8rem; color:#888;">
-    <strong>Key:</strong>
-    <span class="tag tag-info">INFO</span> For information &nbsp;
-    <span class="tag tag-decision">DECISION</span> Requires Board decision &nbsp;
-    <span class="tag tag-vote">VOTE</span> Requires formal vote
+  <p style="margin-top:1.25rem; font-size:.8rem; color:#888; line-height:1.6;">
+    <strong>Color key:</strong>
+    <span style="background:#f0f8f1; border:1px solid var(--dark-gray); padding:.1rem .45rem; border-radius:3px;">Partner / key session</span> &nbsp;
+    <span style="background:#e8e8e8; border:1px solid var(--dark-gray); padding:.1rem .45rem; border-radius:3px;">Social / break</span>
   </p>
-
 </div>
 
 <footer>
