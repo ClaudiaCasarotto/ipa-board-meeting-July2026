@@ -6,83 +6,58 @@
   <title>Agenda – IPA Board Meeting</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    /* ── TWO-COLUMN AGENDA ─────────────────────────────── */
-    .two-col-agenda {
-      width: 100%;
-      border-collapse: collapse;
+    .agenda-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       margin-top: .75rem;
-      font-size: .85rem;
     }
-    .two-col-agenda th {
-      background: var(--dark-green);
-      color: var(--white);
-      padding: .7rem 1rem;
-      font-family: var(--font-display);
+    .day-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    .day-table thead th {
+      background: #155240;
+      color: #ffffff;
+      padding: .65rem 1rem;
+      text-align: left;
+      font-family: Georgia, serif;
       font-size: 1rem;
       font-weight: normal;
-      text-align: left;
-      border: 1px solid var(--dark-green);
     }
-    .two-col-agenda th.time-col-head {
-      background: var(--dark-green);
-      width: 80px;
-    }
-    .two-col-agenda td {
-      padding: .55rem .9rem;
-      border: 1px solid var(--dark-gray);
+    .day-table thead th.time-head { width: 115px; }
+    .day-table td {
+      padding: .6rem .9rem;
+      border: 1px solid #c9c9c8;
       vertical-align: top;
       line-height: 1.5;
-      color: var(--charcoal);
+      color: #414042;
     }
-    .two-col-agenda td.time {
+    .day-table td.time {
       white-space: nowrap;
       font-weight: bold;
-      color: var(--dark-green);
-      font-size: .78rem;
-      background: var(--light-gray);
-      width: 80px;
-      border-right: 2px solid var(--dark-gray);
+      color: #414042;
+      font-size: .8rem;
+      background: #f1f2f2;
+      width: 115px;
+      border-right: 2px solid #c9c9c8;
     }
-    .two-col-agenda td.day-cell {
-      width: calc((100% - 80px) / 2);
-    }
-    .two-col-agenda td.empty {
-      background: var(--white);
-    }
-    .two-col-agenda td.shaded {
-      background: #e8e8e8;
-    }
-    .two-col-agenda td.highlight {
-      background: #f0f8f1;
-    }
-    .two-col-agenda strong {
-      color: var(--dark-green);
-    }
-    .two-col-agenda ul {
-      margin: .2rem 0 0 1rem;
-      padding: 0;
-    }
-    .two-col-agenda ul li {
-      margin-bottom: .15rem;
-    }
-    .confirmed {
-      display: inline-block;
-      background: #d5f0d8;
-      color: var(--dark-green);
-      font-size: .68rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      padding: .1rem .4rem;
-      border-radius: 3px;
-      margin-left: .3rem;
-      vertical-align: middle;
-    }
-    .note {
-      font-size: .78rem;
+    /* Social / break rows */
+    .day-table td.shaded {
+      background: #e4e4e4;
       color: #666;
       font-style: italic;
-      margin-top: .25rem;
+    }
+    .day-table td.time-shaded {
+      background: #e4e4e4;
+      color: #888;
+      font-weight: bold;
+      font-size: .8rem;
+      border-right: 2px solid #c9c9c8;
+      white-space: nowrap;
+    }
+    .day-table ul { margin: .25rem 0 0 1.1rem; padding: 0; }
+    .day-table ul li { margin-bottom: .1rem; }
+
+    @media (max-width: 700px) {
+      .agenda-wrap { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -102,175 +77,125 @@
 <div class="page-header">
   <div class="breadcrumb">← <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp; Agenda</div>
   <h1>Agenda &amp; Schedule</h1>
-  <p>July 30 – 31 &nbsp;·&nbsp; Nairobi, Kenya</p>
+  <p>July 30–31 &nbsp;·&nbsp; Nairobi, Kenya</p>
 </div>
 
 <div class="content">
   <div class="section-label">Two-Day Schedule</div>
 
-  <table class="two-col-agenda">
-    <thead>
-      <tr>
-        <th class="time-col-head"></th>
-        <th>July 30</th>
-        <th>July 31</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="agenda-wrap">
 
-      <tr>
-        <td class="time">8:15 AM</td>
-        <td class="day-cell" rowspan="2">
-          Briefing with the project teams in the Nairobi office<br>
-          <span class="note">Eric Ochieng, Gladys Wanjala</span>
-        </td>
-        <td class="day-cell empty"></td>
-      </tr>
-      <tr>
-        <td class="time">8:30 AM</td>
-        <td class="day-cell empty"></td>
-      </tr>
+    <!-- ── JULY 30 ─────────────────────────────────────── -->
+    <table class="day-table">
+      <thead>
+        <tr>
+          <th class="time-head">Time</th>
+          <th>30 July</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">8:15 – 9:00</td>
+          <td>Briefing with the project teams in the Nairobi office</td>
+        </tr>
+        <tr>
+          <td class="time">9:00 – 12:15</td>
+          <td>Field visit: Kenya Life Panel Survey data collection in Nairobi</td>
+        </tr>
+        <tr>
+          <td class="time-shaded">12:15 – 13:30</td>
+          <td class="shaded">Lunch with the whole Nairobi team</td>
+        </tr>
+        <tr>
+          <td class="time">14:30 – 16:30</td>
+          <td>The Board meets the management team in Nairobi</td>
+        </tr>
+        <tr>
+          <td class="time">16:30 – 17:30</td>
+          <td>Transfer to Karen's</td>
+        </tr>
+        <tr>
+          <td class="time-shaded">18:00 – 21:00</td>
+          <td class="shaded">Dinner at Karen's</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <tr>
-        <td class="time">9:00 AM</td>
-        <td class="day-cell">Project field visit in small groups</td>
-        <td class="day-cell empty"></td>
-      </tr>
+    <!-- ── JULY 31 ─────────────────────────────────────── -->
+    <table class="day-table">
+      <thead>
+        <tr>
+          <th class="time-head">Time</th>
+          <th>31 July</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">9:30 – 10:30</td>
+          <td>
+            Ministry of Education<br>
+            Fred Mujumba, Director for the Kenya Education Management Information System (KEMIS)
+          </td>
+        </tr>
+        <tr>
+          <td class="time-shaded">10:30 – 10:50</td>
+          <td class="shaded">Coffee break</td>
+        </tr>
+        <tr>
+          <td class="time">10:50 – 12:15</td>
+          <td>
+            Village Enterprise
+            <ul>
+              <li>Leah Okero: Regional Director of Programs &amp; Kenya Country Director</li>
+              <li>Billy Odhiambo: Senior Monitoring, Evidence &amp; Learning Manager</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">12:15 – 13:00</td>
+          <td>
+            IFPRI<br>
+            Berber Kremer: Senior Research Fellow, Markets, Trade, and Institutions Unit
+          </td>
+        </tr>
+        <tr>
+          <td class="time-shaded">13:00 – 13:30</td>
+          <td class="shaded">Lunch with Berber Kremer</td>
+        </tr>
+        <tr>
+          <td class="time">13:30 – 14:00</td>
+          <td>Takeaways from the morning</td>
+        </tr>
+        <tr>
+          <td class="time">14:00 – 15:30</td>
+          <td>Board feedback on the draft strategy</td>
+        </tr>
+        <tr>
+          <td class="time">15:30 – 16:00</td>
+          <td>Mid-year financial results</td>
+        </tr>
+        <tr>
+          <td class="time">16:00 – 16:30</td>
+          <td>Committee reports</td>
+        </tr>
+        <tr>
+          <td class="time">16:30 – 17:30</td>
+          <td>Executive session</td>
+        </tr>
+        <tr>
+          <td class="time-shaded">18:00 – 21:00</td>
+          <td class="shaded">Dinner</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <tr>
-        <td class="time">9:30 AM</td>
-        <td class="day-cell" rowspan="2">
-          <strong>KLPS</strong>
-          <ul>
-            <li>Discussion with enumerator</li>
-            <li>Discussion with respondent</li>
-          </ul>
-        </td>
-        <td class="day-cell highlight" rowspan="3">
-          <strong>Government partner visit</strong> <span class="confirmed">confirmed</span><br>
-          Ministry of Education, Mr. Fred Mujumba, Director for the Kenya Education Management Information System (KEMIS)<br>
-          <span class="note">(agreed and will work to mobilize Directors; IPA to support with agenda/prep for meeting)</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="time">10:00 AM</td>
-      </tr>
-      <tr>
-        <td class="time">10:30 AM</td>
-        <td class="day-cell empty"></td>
-      </tr>
-
-      <tr>
-        <td class="time">10:50 AM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell shaded">Tea break</td>
-      </tr>
-
-      <tr>
-        <td class="time">11:00 AM</td>
-        <td class="day-cell empty" rowspan="2"></td>
-        <td class="day-cell highlight" rowspan="2">
-          <strong>Village Enterprise</strong> <span class="confirmed">confirmed</span>
-          <ul>
-            <li>Leah Okero: Regional Director of Programs &amp; Kenya Country Director</li>
-            <li>Billy Odhiambo: Senior Monitoring, Evidence &amp; Learning Manager</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td class="time">11:30 AM</td>
-      </tr>
-
-      <tr>
-        <td class="time">12:00 PM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell highlight" rowspan="2">
-          <strong>IFPRI</strong> <span class="confirmed">confirmed</span><br>
-          Berber Kremer: Senior Research Fellow, Markets, Trade, and Institutions Unit
-        </td>
-      </tr>
-      <tr>
-        <td class="time">12:15 PM</td>
-        <td class="day-cell empty"></td>
-      </tr>
-
-      <tr>
-        <td class="time">12:30 PM</td>
-        <td class="day-cell shaded">Lunch with the Nairobi team @ office</td>
-        <td class="day-cell shaded">Lunch with Berber @ Radisson Blu</td>
-      </tr>
-
-      <tr>
-        <td class="time">1:00 PM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell empty"></td>
-      </tr>
-      <tr>
-        <td class="time">1:30 PM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell empty"></td>
-      </tr>
-
-      <tr>
-        <td class="time">2:00 PM</td>
-        <td class="day-cell highlight" rowspan="4">
-          <strong>Management team (expanded) meeting</strong><br>
-          Better understand the history, structure, strategic positioning of the Country Office, focusing on how the strategic re-alignment is happening in practice (incl. OneIPA projects) and the positioning as regional hub from an operational and programmatic perspective.<br>
-          <span class="note">IPAK SMT + RFE, Noureini, Vicky, Grants, Comms</span>
-        </td>
-        <td class="day-cell">Takeaways from the morning</td>
-      </tr>
-      <tr>
-        <td class="time">2:30 PM</td>
-        <td class="day-cell">Board feedback on the draft strategy</td>
-      </tr>
-      <tr>
-        <td class="time">3:00 PM</td>
-        <td class="day-cell empty"></td>
-      </tr>
-      <tr>
-        <td class="time">3:30 PM</td>
-        <td class="day-cell empty"></td>
-      </tr>
-
-      <tr>
-        <td class="time">4:00 PM</td>
-        <td class="day-cell" rowspan="2">
-          Transfer to Karen's<br>
-          <span class="note">(IPAK to organize + cabs for return TBD based on hotels)</span>
-        </td>
-        <td class="day-cell">Mid year financial results</td>
-      </tr>
-      <tr>
-        <td class="time">4:30 PM</td>
-        <td class="day-cell">Committee reports</td>
-      </tr>
-
-      <tr>
-        <td class="time">5:00 PM</td>
-        <td class="day-cell">Board only dinner at Karen's</td>
-        <td class="day-cell">Executive session</td>
-      </tr>
-      <tr>
-        <td class="time">5:30 PM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell empty"></td>
-      </tr>
-
-      <tr>
-        <td class="time">6:00 PM</td>
-        <td class="day-cell empty"></td>
-        <td class="day-cell shaded">Drinks and dinner</td>
-      </tr>
-
-    </tbody>
-  </table>
+  </div>
 
   <p style="margin-top:1.25rem; font-size:.8rem; color:#888; line-height:1.6;">
     <strong>Color key:</strong>
-    <span style="background:#f0f8f1; border:1px solid var(--dark-gray); padding:.1rem .45rem; border-radius:3px;">Partner / key session</span> &nbsp;
-    <span style="background:#e8e8e8; border:1px solid var(--dark-gray); padding:.1rem .45rem; border-radius:3px;">Social / break</span>
+    <span style="background:#e4e4e4; padding:.1rem .45rem; border-radius:3px; border:1px solid #c9c9c8; font-style:italic; color:#666;">Gray = meals &amp; breaks</span>
   </p>
+
 </div>
 
 <footer>
